@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: pharmacy_db
+    environment:
+      POSTGRES_USER: pharmacy
+      POSTGRES_PASSWORD: pharmacy_dev
+      POSTGRES_DB: pharmacy_erp
+    ports:
+      - "5432:5432"
+    volumes:
+      - pharmacy_pg_data:/data
+
+volumes:
+  pharmacy_pg_data:

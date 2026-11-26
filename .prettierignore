@@ -1,0 +1,10 @@
+node_modules
+dist
+client/dist
+server/dist
+package-lock.json
+server/uploads
+.env
+*.min.js
+coverage
+.prisma

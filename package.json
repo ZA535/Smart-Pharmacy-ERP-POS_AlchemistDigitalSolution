@@ -1,0 +1,23 @@
+{
+  "name": "smart-pharmacy-erp-pos",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w server\" \"npm run dev -w client\"",
+    "server": "npm run dev -w server",
+    "build": "npm run build -w client",
+    "db:up": "docker compose up -d",
+    "db:migrate": "npm run db:migrate -w server",
+    "db:push": "npm run db:push -w server",
+    "db:seed": "npm run db:seed -w server",
+    "format": "prettier --write \"client/src/**/*.{js,css}\" \"server/src/**/*.js\" \"server/prisma/seed.js\" \"*.{json,md,yml}\"",
+    "format:check": "prettier --check \"client/src/**/*.{js,css}\" \"server/src/**/*.js\" \"server/prisma/seed.js\" \"*.{json,md,yml}\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "prettier": "^3.4.2"
+  }
+}
